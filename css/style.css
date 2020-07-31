@@ -19,6 +19,17 @@ ul, li{
 body{
     /* 背景顏色 */
     background-color: rgb(245, 245, 245);
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
+}
+
+/********** 背景 **********/
+img:hover{
+    /* 滑鼠樣式改為手指 */
+    cursor: pointer;
+}
+.carousel-inner > img {
+    width: 1920px;
+    height: 400px;
 }
 
 /********** card內距值 **********/

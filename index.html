@@ -1,73 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>網頁標題</title>
     <!-- CSS文件載入 -->
-    
-
-
-    <!-- js文件載入 -->
-    
-
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
+        integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    </link>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <!-- 選單/start -->
-   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <h2>待辦事項</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarBlogMenu"
+            aria-controls="navbarBlogMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarBlogMenu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">待辦事項</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="share.html">站主分享</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="host.html">站主資訊</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <!-- 選單/end -->
-    <!-- 廣告/start -->
-    
-    <!-- 廣告/end -->
-    <!-- 麵包屑/start -->
-    
-    <!-- 麵包屑/end -->
-    <!-- 部落格與側邊欄/start -->
-    
+
+    <section class="container mt-5">
+        <div class="row">
             <!-- 部落格內容/start -->
-           
-                <!-- 第一則文章/start -->
-                
-                <!-- 第一則文章/end -->
-                <!-- 第二則至第五則文章/start -->
-                
-                    <!-- 第二則文章/start -->
-                    
-                    <!-- 第二則文章/end -->
-                    <!-- 第三則文章/start -->
-                    
-                    <!-- 第三則文章/end -->
-                    <!-- 第四則文章/start -->
-                    
-                    <!-- 第四則文章/end -->
-                    <!-- 第五則文章/start -->
-                    
-                    <!-- 第五則文章/end -->
-                
-                <!-- 第二則至第五則文章/end -->
-            
+            <div class="col-12 col-md-8">
+                <div class="row">
+                    <!-- 第一則文章/start -->
+                    <div class="col-12 col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <strong>歡迎來臺灣</strong>
+                                </h4>
+                                <p class="card-text">「臺灣是亞洲的秘密寶石，任何時間來此造訪，都值回票價」，這是國際知名旅遊作家柯德（David Code）對臺灣的盛讚！</p>
+                                <p class="card-text">
+                                    聯合國世界觀光組織UNWTO宣示2017年為「國際永續觀光發展年」！臺灣也正式啟動「2017生態旅遊年」，推出全國四季賞螢、賞鯨豚、賞候鳥、賞鷹、紫斑蝶等在地深度、生態旅遊體驗活動，更以主動營造螢火蟲棲地，成功爭取到「世界螢火蟲大會」在臺舉辦，這些無比豐富的生態旅遊精彩體驗，您絕對不能錯過！
+                                </p>
+                                <span class="d-block text-secondary mt-4 icon datetime">2017-12-31</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 第一則文章/end -->
+                </div>
+            </div>
             <!-- 部落格內容/end -->
             <!-- 側邊欄/start -->
-            
-                <!-- 搜尋/start -->
-                
-                <!-- 搜尋/end -->
-                <!-- 最新文章/start -->
-                
-                <!-- 最新文章/end -->
+            <div class="col-12 col-md-4">
+                <!-- 未完成事項/start -->
+                <div class="bg-white p-3 mb-3 border rounded">
+                    <button type="button" class="btn btn-success btn-lg btn-block">
+                        <strong>新增事項</strong>
+                    </button>
+                </div>
+                <!-- 未完成事項/end -->
+                <!-- 未完成事項/start -->
+                <div class="bg-white p-3 mb-3 border rounded">
+                    <h5 class="mb-3">
+                        <strong>最新文章</strong>
+                    </h5>
+                    <ul class="list-category">
+                        <li class="media mb-3">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1">
+                                    <a href="#">歡迎來臺灣</a>
+                                </h5>
+                                <span class="d-block mt-3 text-secondary icon datetime">2017-12-31</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 未完成事項/end -->
                 <!-- 分類/start -->
-                
+                <div class="bg-white p-3 mb-3 border rounded">
+                    <h5 class="mb-3">
+                        <strong>分類</strong>
+                    </h5>
+                    <ul class="list-category category">
+                        <li>
+                            <a href="#">所有
+                                <span class="badge badge-pill badge-secondary ml-2">10</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">已完成
+                                <span class="badge badge-pill badge-secondary ml-2">1</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">未完成
+                                <span class="badge badge-pill badge-secondary ml-2">1</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 <!-- 分類/end -->
-                <!-- 標籤雲/start -->
-                
-                <!-- 標籤雲/end -->
-            
+            </div>
             <!-- 側邊欄/end -->
-        
+        </div>
+    </section>
     <!-- 部落格與側邊欄/end -->
     <!-- 頁腳/start -->
-    
+
     <!-- 頁腳/end -->
+
+    <!-- js文件載入 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
