@@ -34,9 +34,9 @@ const app = new Vue({
             e.preventDefault();
             if (this.title && this.content) {
                 this.date = new Date().toLocaleString();
-                let array = JSON.parse(localStorage.getItem('task'));
-                array.push({ title: this.title, content: this.content, date: this.date, editShow: false, status: "未完成" });
-                localStorage.setItem('task', JSON.stringify(array));
+                let Array = JSON.parse(localStorage.getItem('task'));
+                Array.push({ title: this.title, content: this.content, date: this.date, editShow: false, status: "未完成" });
+                localStorage.setItem('task', JSON.stringify(Array));
                 location.reload();
             }
         },
@@ -52,18 +52,22 @@ const app = new Vue({
             localStorage.setItem('task', JSON.stringify(this.storageArray));
             if (this.storageArray[id].status == "已完成") {
                 this.complete_count = 0;
+                this.undone_count = 0;
                 for (let i = 0; i < this.storageArray.length; i++) {
                     if (this.storageArray[i].status == "已完成")
                         this.complete_count++;
+                    if (this.storageArray[i].status == "未完成")
+                        this.undone_count++;
                 }
-                this.undone_count--;
             } else if ( this.storageArray[id].status == "未完成") {
+                this.complete_count = 0;
                 this.undone_count = 0;
                 for (let i = 0; i < this.storageArray.length; i++) {
                     if (this.storageArray[i].status == "未完成")
                         this.undone_count++;
+                    if (this.storageArray[i].status == "已完成")
+                        this.complete_count++;
                 }
-                this.complete_count--;
             }
         },
         deletes: function (id) {
@@ -75,9 +79,9 @@ const app = new Vue({
                 } else {
                     this.undone_count--;
                 }
-                let array = JSON.parse(localStorage.getItem('task'));
-                array.splice(id, 1);
-                localStorage.setItem('task', JSON.stringify(array));
+                let Array = JSON.parse(localStorage.getItem('task'));
+                Array.splice(id, 1);
+                localStorage.setItem('task', JSON.stringify(Array));
                 this.storageArray = JSON.parse(localStorage.getItem('task'));
                 this.all_count--;
             }

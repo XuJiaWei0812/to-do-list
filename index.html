@@ -95,7 +95,7 @@
                                         @click="exit_success(index,value.status)">
                                         <i class="far fa-check-square fa-2x  ml-3 text-success"></i>
                                     </button>
-                                    <button type="button" class="btn btn-link" name="delete" @click="deletes(index)">
+                                    <button type="button" class="btn btn-link" name="delete" v-if="!value.editShow" @click="deletes(index)">
                                         <i class="fas fa-trash-alt fa-2x ml-3 text-danger" name="delete"></i>
                                     </button>
                                 </div>
