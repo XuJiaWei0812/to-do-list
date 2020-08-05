@@ -30,21 +30,19 @@
                     <a class="nav-link" href="index.html">待辦事項</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="share.html">站主分享</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="host.html">站主資訊</a>
+                    <a class="nav-link" href="share.html">網站分享</a>
                 </li>
             </ul>
         </div>
     </nav>
     <!-- 選單/end -->
-    <section class="container mt-5" id="to-do-list">
+    <!--待辦便利貼與側邊欄/start -->
+    <section class="container mt-3" id="to-do-list">
         <div class="row">
-            <!-- 部落格內容/start -->
+            <!-- 待辦便利貼/start -->
             <div class="col-12 col-md-8">
                 <div class="row" v-if="storageArray.length">
-                    <!-- 文章/start -->
+                    <!-- 待辦便利貼/start -->
                     <div class="col-12 col-sm-6" v-for="(value, index) in storageArray">
                         <div class="card">
                             <div class="card-body">
@@ -82,7 +80,11 @@
                                 <!-- 日期/start -->
                                 <div class="d-flex justify-content-between">
                                     <span class="d-block text-secondary mt-4 icon datetime">{{value.date}}</span>
-                                    <span class="d-block text-secondary mt-4" class="card-text">{{value.status}}</span>
+                                    <!-- <span class="d-block text-secondary mt-4" class="card-text">{{value.status}}</span> -->
+                                    <i class="fas fa-check d-block text-secondary text-success mt-4"
+                                        v-if="value.status=='已完成'"> 已完成</i>
+                                    <i class="fas fa-times d-block text-danger text-success mt-4"
+                                        v-if="value.status=='未完成'"> 未完成</i>
                                 </div>
                                 <!-- 日期/end -->
                                 <!-- 編輯&刪除/start -->
@@ -95,7 +97,8 @@
                                         @click="exit_success(index,value.status)">
                                         <i class="far fa-check-square fa-2x  ml-3 text-success"></i>
                                     </button>
-                                    <button type="button" class="btn btn-link" name="delete" v-if="!value.editShow" @click="deletes(index)">
+                                    <button type="button" class="btn btn-link" name="delete" v-if="!value.editShow"
+                                        @click="deletes(index)">
                                         <i class="fas fa-trash-alt fa-2x ml-3 text-danger" name="delete"></i>
                                     </button>
                                 </div>
@@ -103,20 +106,20 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 第一則文章/end -->
+                    <!-- 待辦便利貼/end -->
                 </div>
             </div>
-            <!-- 部落格內容/end -->
+            <!-- 待辦便利貼/end -->
             <!-- 側邊欄/start -->
             <div class="col-12 col-md-4">
-                <!-- 未完成事項/start -->
+                <!-- 新增事項/start -->
                 <div class="bg-white p-3 mb-3 border rounded">
                     <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal"
                         data-target="#exampleModal">
                         <strong>新增事項</strong>
                     </button>
                 </div>
-                <!-- Modal -->
+                <!-- 新增事項視窗(FROM)! -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -146,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- 未完成事項/end -->
+                <!-- 新增事項/end -->
                 <!-- 未完成事項/start -->
                 <div class="bg-white p-3 mb-3 border rounded">
                     <h5 class="mb-3">
@@ -164,7 +167,7 @@
                     </ul>
                 </div>
                 <!-- 未完成事項/end -->
-                <!-- 分類/start -->
+                <!-- 事項分類/start -->
                 <div class="bg-white p-3 mb-3 border rounded">
                     <h5 class="mb-3">
                         <strong>分類</strong>
@@ -187,16 +190,12 @@
                         </li>
                     </ul>
                 </div>
-                <!-- 分類/end -->
+                <!-- 事項分類/end -->
             </div>
             <!-- 側邊欄/end -->
         </div>
     </section>
-    <!-- 部落格與側邊欄/end -->
-    <!-- 頁腳/start -->
-
-    <!-- 頁腳/end -->
-
+    <!-- 待辦便利貼與側邊欄/end -->
     <!-- js文件載入 -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>

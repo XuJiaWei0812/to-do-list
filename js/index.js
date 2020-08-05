@@ -103,12 +103,9 @@ const app = new Vue({
                     }
                 }
                 this.storageArray = Array;
-                console.log(Array);
             }
         },
     },
     updated() {
-        console.log('view updated')
     }
 })
-console.log(app.all_count);
